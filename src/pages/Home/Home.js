@@ -24,10 +24,10 @@ class Home extends React.Component{
       <div className="home">  
         <img className="page" src="/wolf/img/p1.png"/>  
         <div className="awe">
-          
-          <p><FontAwesomeIcon icon={faArrowLeft}/></p>
+{/*           
+          <p><FontAwesomeIcon icon={faArrowLeft}/></p> */}
           <p className="text">In The beginning there was a spoirit wolf and here Mother was the Moon</p>
-          <p><FontAwesomeIcon icon={faArrowRight}/></p>
+          {/* <p><FontAwesomeIcon icon={faArrowRight}/></p> */}
 
         </div>
       
