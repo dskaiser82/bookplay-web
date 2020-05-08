@@ -1,8 +1,22 @@
 .home {
+	.awe{
+		position: absolute;
+		bottom: 0;
+		p{
+		-webkit-text-fill-color: white;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    font-size: 45px;
+    font-family: 'Libre Caslon Text', serif;
+    font-weight: 700;
+		}
+	}
     img.page{
 				height: 100vh;
 				border: 15px solid black;
     }
 }
 
-
+.fa-arrow-left{
+	font-size: 60px;
+}
