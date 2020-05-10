@@ -12,17 +12,18 @@ class Home extends React.Component{
     this.state = {
       email: "Please enter email"
     }
-    this.handleEmail = this.handleEmail.bind(this)
+    // this.handleEmail = this.handleEmail.bind(this)
   } //end c
 
-  handleEmail(event){
-    this.setState({email: event.target.value})
+  playAudio(){
+    const audio = new Audio('/wolf/music/wolf_flute_final.mp3');
+    audio.play();
   }
 
   render(){
     return(
       <div className="home">  
-        <img className="page" src="/wolf/img/p1.png"/>  
+        <img onClick={this.playAudio} className="page" src="/wolf/img/p1.png"/>  
         <div className="awe">
 {/*           
           <p><FontAwesomeIcon icon={faArrowLeft}/></p> */}
