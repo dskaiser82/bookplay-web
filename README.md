@@ -34,4 +34,16 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
 
 
+### Font Awesome in Reacr
+docs:
+https://www.npmjs.com/package/@fortawesome/react-fontawesome
+
+import:
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowLeft} from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight} from '@fortawesome/free-solid-svg-icons';
+
+example:
+<p><FontAwesomeIcon icon={faArrowLeft}/></p> 
+
 
