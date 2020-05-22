@@ -23,7 +23,7 @@ class Home extends React.Component{
   render(){
     return(
       <div className="home">  
-        <img onClick={this.playAudio} className="page" src="/wolf/img/p1.png"/>  
+        <img onClick={this.playAudio} className="page" src="/wolf/img/pages/p1.png"/>  
         <div className="awe">
 {/*           
           <p><FontAwesomeIcon icon={faArrowLeft}/></p> */}
