@@ -89,11 +89,18 @@ class Home extends React.Component{
     audio.play();
   }
 
+  playPageTurn(){
+    const audio = new Audio('/shared/audio/page_turn.mp3');
+    audio.play();
+  }
+
   pageUp(){
     this.setState({pageCounter:this.state.pageCounter+1})
     if(this.state.pageCounter === 0){
       this.playAudio()
     }
+
+    this.playPageTurn()
 
   }
 
