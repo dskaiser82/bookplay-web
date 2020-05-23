@@ -11,9 +11,70 @@ class Home extends React.Component{
     super(props)
 
     this.state = {
+      pageCounter: 2,
       pages : [
         {
           img: "/wolf/img/pages/p1.png" ,
+          vo: null,
+          text: "In The beginning there was a Spirit Wolf, and here Mother was the Moon"
+        },
+        {
+          img: "/wolf/img/pages/p2.png" ,
+          vo: null,
+          text: "In The beginning there was a Spirit Wolf, and here Mother was the Moon"
+        },
+        {
+          img: "/wolf/img/pages/p3.png" ,
+          vo: null,
+          text: "In The beginning there was a Spirit Wolf, and here Mother was the Moon"
+        },
+        {
+          img: "/wolf/img/pages/p4.png" ,
+          vo: null,
+          text: "In The beginning there was a Spirit Wolf, and here Mother was the Moon"
+        },
+        {
+          img: "/wolf/img/pages/p5.png" ,
+          vo: null,
+          text: "In The beginning there was a Spirit Wolf, and here Mother was the Moon"
+        },
+        {
+          img: "/wolf/img/pages/p6.png" ,
+          vo: null,
+          text: "In The beginning there was a Spirit Wolf, and here Mother was the Moon"
+        },
+        {
+          img: "/wolf/img/pages/p7.png" ,
+          vo: null,
+          text: "In The beginning there was a Spirit Wolf, and here Mother was the Moon"
+        },
+        {
+          img: "/wolf/img/pages/p8.png" ,
+          vo: null,
+          text: "In The beginning there was a Spirit Wolf, and here Mother was the Moon"
+        },
+        {
+          img: "/wolf/img/pages/p9.png" ,
+          vo: null,
+          text: "In The beginning there was a Spirit Wolf, and here Mother was the Moon"
+        },
+        {
+          img: "/wolf/img/pages/p10.png" ,
+          vo: null,
+          text: "In The beginning there was a Spirit Wolf, and here Mother was the Moon"
+        },
+        {
+          img: "/wolf/img/pages/p11.png" ,
+          vo: null,
+          text: "In The beginning there was a Spirit Wolf, and here Mother was the Moon"
+        },
+        {
+          img: "/wolf/img/pages/p12.png" ,
+          vo: null,
+          text: "In The beginning there was a Spirit Wolf, and here Mother was the Moon"
+        },
+        {
+          img: "/wolf/img/pages/p13.png" ,
           vo: null,
           text: "In The beginning there was a Spirit Wolf, and here Mother was the Moon"
         }
@@ -28,10 +89,12 @@ class Home extends React.Component{
   }
 
   render(){
+    let pages = this.state.pages;
+    let pageCounter = this.state.pageCounter
     return(
       <div className="home">  
        
-       <Start img={this.state.pages[0]["img"]} text={this.state.pages[0]["text"]} />
+       <Start img={pages[pageCounter]["img"]} text={pages[pageCounter]["text"]} />
       
       </div>
     )
