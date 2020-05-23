@@ -109,14 +109,13 @@ class Home extends React.Component{
     let pageCounter = this.state.pageCounter
     return(
       <div className="home">  
-      <h1>{pageCounter}</h1>
+        <h1>{pageCounter}</h1>
 
-      {pageCounter <= 12
-        ? <Start pageUp={this.pageUp} img={pages[pageCounter]["img"]} text={pages[pageCounter]["text"]} />
-        : <h1>DONE</h1>
-      }
-       
-      
+        {pageCounter <= 12
+          ? <Start pageUp={this.pageUp} img={pages[pageCounter]["img"]} text={pages[pageCounter]["text"]} />
+          : <h1>DONE</h1>
+        }
+        
       </div>
     )
   }
