@@ -10,8 +10,10 @@ class Home extends React.Component{
   constructor(props){
     super(props)
 
+    this.pageUp = this.pageUp.bind(this)
+  
     this.state = {
-      pageCounter: 2,
+      pageCounter: 0,
       pages : [
         {
           img: "/wolf/img/pages/p1.png" ,
@@ -80,7 +82,6 @@ class Home extends React.Component{
         }
       ] 
     }
-    // this.handleEmail = this.handleEmail.bind(this)
   } //end c
 
   playAudio(){
@@ -88,13 +89,26 @@ class Home extends React.Component{
     audio.play();
   }
 
+  pageUp(){
+    this.setState({pageCounter:this.state.pageCounter+1})
+    if(this.state.pageCounter === 0){
+      this.playAudio()
+    }
+
+  }
+
   render(){
     let pages = this.state.pages;
     let pageCounter = this.state.pageCounter
     return(
       <div className="home">  
+      <h1>{pageCounter}</h1>
+
+      {pageCounter <= 12
+        ? <Start pageUp={this.pageUp} img={pages[pageCounter]["img"]} text={pages[pageCounter]["text"]} />
+        : <h1>DONE</h1>
+      }
        
-       <Start img={pages[pageCounter]["img"]} text={pages[pageCounter]["text"]} />
       
       </div>
     )
