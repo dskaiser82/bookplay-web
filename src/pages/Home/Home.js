@@ -17,27 +17,27 @@ class Home extends React.Component{
       pages : [
         {
           img: "/wolf/img/pages/p1.png" ,
-          vo: null,
+          vo: "/wolf/music/vo/wolf_vo_1.mp3",
           text: 'In The beginning there was a Spirit Wolf, and here Mother was the Moon'
         },
         {
           img: "/wolf/img/pages/p2.png" ,
-          vo: null,
+          vo:  "/wolf/music/vo/wolf_vo_2.mp3",
           text: 'The Moon showered her daughter with the love of moonlight.'
         },
         {
           img: "/wolf/img/pages/p3.png" ,
-          vo: null,
+          vo:  "/wolf/music/vo/wolf_vo_3.mp3",
           text: 'As the first night ended, Spirit Wolf took her very first sleep.'
         },
         {
           img: "/wolf/img/pages/p4.png" ,
-          vo: null,
+          vo:  "/wolf/music/vo/wolf_vo_4.mp3",
           text: 'As Spirit Wolf awoke, she did not see her Mother above.  She looked, but could not see her Mother Moon. "My Mother has left me", said Spirit Wolf.'
         },
         {
           img: "/wolf/img/pages/p5.png" ,
-          vo: null,
+          vo:  "/wolf/music/vo/wolf_vo_5.mp3",
           text: '"But I will find her!" And Spirit Wolf began her journey for the day. '
         },
         {
@@ -84,9 +84,10 @@ class Home extends React.Component{
     }
   } //end c
 
-  playAudio(){
-    const audio = new Audio('/wolf/music/wolf_flute_final.mp3');
-    audio.play();
+  playAudio(vo){
+    let music = new Audio(vo)
+    music.load()
+    music.play();
   }
 
   playPageTurn(){
@@ -110,7 +111,7 @@ class Home extends React.Component{
     return(
       <div className="home">  
         <h1>{pageCounter}</h1>
-
+        <button onClick={()=> {this.playAudio(pages[pageCounter]["vo"])}}>Cleek</button>
         {pageCounter <= 12
           ? <Start pageUp={this.pageUp} img={pages[pageCounter]["img"]} text={pages[pageCounter]["text"]} />
           : <h1>DONE</h1>
