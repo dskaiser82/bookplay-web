@@ -42,67 +42,73 @@ class Home extends React.Component{
         },
         {
           img: "/wolf/img/pages/p6.png" ,
-          vo: null,
+          vo: "/wolf/music/vo/wolf_vo_6.mp3",
           text: 'Spirit Wolf had great speed and traveled far.'
         },
         {
           img: "/wolf/img/pages/p7.png" ,
-          vo: null,
+          vo: "/wolf/music/vo/wolf_vo_7.mp3",
           text: 'She ventured into a tall forest. And the Old Oak said, "My Mother is the Sun and her love as warm as the summer."'
         },
         {
           img: "/wolf/img/pages/p8.png" ,
-          vo: null,
+          vo: "/wolf/music/vo/wolf_vo_8.mp3",
           text: 'Spirit Wolf ran until land ended and waves began. And the Sea Turtle said, "My Mother is the Sea and her love is as vast as eternity." '
         },
         {
           img: "/wolf/img/pages/p9.png" ,
-          vo: null,
+          vo: "/wolf/music/vo/wolf_vo_9.mp3",
           text: 'Spirit Wolf journeyed to a land of ice. And the Proud Penguin said, "My Mother is the Snow, and her love is as soft as a blanket."  '
         },
         {
           img: "/wolf/img/pages/p10.png" ,
-          vo: null,
+          vo: "/wolf/music/vo/wolf_vo_10.mp3",
           text: 'Spirit Wolf climbed the highest mountain. The Great Eagle said, "My Mother is the Sky, and her love is as strong as the wind."'
         },
         {
           img: "/wolf/img/pages/p11.png" ,
-          vo: null,
+          vo: "/wolf/music/vo/wolf_vo_11.mp3",
           text: 'And then looking to the sky above, Spirit Wolf saw a faint image of Mother Moon. "She sleeps", said the Great Eagle. "But she will awaken come nighttime"'
         },
         {
           img: "/wolf/img/pages/p12.png" ,
-          vo: null,
+          vo: "/wolf/music/vo/wolf_vo_12.mp3",
           text: 'And as the Sun set and day turned into night, Mother Moon awoke.'
         },
         {
           img: "/wolf/img/pages/p13.png" ,
-          vo: null,
+          vo: "/wolf/music/vo/wolf_vo_13.mp3",
           text: 'In the beauty of moonlight the daughter wolf declared, "I am Spirit Wolf.  My Mother is the Moon. Her love is as bright as diamond." And Spirit Wolf cried, "Howwwoooooo."'
         }
       ] 
     }
   } //end c
 
-  playAudio(vo){
-    let music = new Audio(vo)
-    music.load()
+  playAudio(file){
+    let audio = new Audio(file)
+    audio.load()
+    audio.play();
+  }
+
+  playMusic(){
+    let music = new Audio('/wolf/music/wolf_flute_final.mp3')
     music.play();
   }
 
+ 
   playPageTurn(){
     const audio = new Audio('/shared/audio/page_turn.mp3');
     audio.play();
   }
 
   pageUp(){
-    this.setState({pageCounter:this.state.pageCounter+1})
     if(this.state.pageCounter === 0){
-      this.playAudio()
+      this.playMusic()
     }
 
+    this.setState({pageCounter:this.state.pageCounter+1})
+    
     this.playPageTurn()
-
   }
 
   render(){
@@ -111,9 +117,8 @@ class Home extends React.Component{
     return(
       <div className="home">  
         <h1>{pageCounter}</h1>
-        <button onClick={()=> {this.playAudio(pages[pageCounter]["vo"])}}>Cleek</button>
         {pageCounter <= 12
-          ? <Start pageUp={this.pageUp} img={pages[pageCounter]["img"]} text={pages[pageCounter]["text"]} />
+          ? <Start playAudio={this.playAudio} pageUp={this.pageUp} vo={pages[pageCounter+1]["vo"]} img={pages[pageCounter]["img"]} text={pages[pageCounter]["text"]} />
           : <h1>DONE</h1>
         }
         
