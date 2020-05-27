@@ -10,6 +10,8 @@ class Home extends React.Component{
   constructor(props){
     super(props)
 
+    this.voRef = React.createRef();
+
     this.pageUp = this.pageUp.bind(this)
   
     this.state = {
@@ -84,11 +86,11 @@ class Home extends React.Component{
     }
   } //end c
 
-  playAudio(file){
-    let audio = new Audio(file)
-    audio.load()
-    audio.play();
-  }
+  // playAudio(file){
+  //   let audio = new Audio(file)
+  //   audio.load()
+  //   audio.play();
+  // }
 
   playMusic(){
     let music = new Audio('/wolf/music/wolf_flute_final.mp3')
@@ -99,6 +101,8 @@ class Home extends React.Component{
   playPageTurn(){
     const audio = new Audio('/shared/audio/page_turn.mp3');
     audio.play();
+
+    this.voRef.current.play()
   }
 
   pageUp(){
@@ -117,8 +121,13 @@ class Home extends React.Component{
     return(
       <div className="home">  
         <h1>{pageCounter}</h1>
+
+        <audio ref={this.voRef} preload="true" controls>
+          <source src="/wolf/music/vo/wolf_vo_12.mp3"/>
+        </audio>
+
         {pageCounter <= 12
-          ? <Start playAudio={this.playAudio} pageUp={this.pageUp} vo={pages[pageCounter+1]["vo"]} img={pages[pageCounter]["img"]} text={pages[pageCounter]["text"]} />
+          ? <Start pageUp={this.pageUp} vo={pages[pageCounter+1]["vo"]} img={pages[pageCounter]["img"]} text={pages[pageCounter]["text"]} />
           : <h1>DONE</h1>
         }
         

@@ -6,7 +6,7 @@ import './Start.scss'
 function Start(props) {
 	return (
 		<div className="start">
-			<img onClick={()=> {props.pageUp(); props.playAudio(props.vo)}} className="page" src={props.img} />
+			<img onClick={()=> {props.pageUp()}} className="page" src={props.img} />
 			<div className="text-box">
 				<p className="text">{props.text}</p>
 			</div>
