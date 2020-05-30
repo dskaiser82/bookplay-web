@@ -126,7 +126,7 @@ class Home extends React.Component{
           <source src={pages[pageCounter]["vo"]}/>
         </audio>
 
-        {pageCounter <= 12
+        {pageCounter <= 11
           ? <Start pageUp={this.pageUp} vo={pages[pageCounter+1]["vo"]} img={pages[pageCounter]["img"]} text={pages[pageCounter]["text"]} />
           : <h1>DONE</h1>
         }
