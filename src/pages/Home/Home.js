@@ -89,11 +89,6 @@ class Home extends React.Component{
           img: "/wolf/img/pages/p13.png" ,
           vo: "/wolf/music/vo/wolf_vo_13.mp3",
           text: 'In the beauty of moonlight the daughter wolf declared, "I am Spirit Wolf.  My Mother is the Moon. Her love is as bright as diamond." And Spirit Wolf cried, "Howwwoooooo."'
-        },
-        {
-          img: "/wolf/img/pages/p14_cover.png" ,
-          vo: "",
-          text: ''
         }
       ] 
     }
@@ -133,14 +128,14 @@ class Home extends React.Component{
     let pageCounter = this.state.pageCounter
     return(
       <div className="home">  
-        <h1>{pageCounter}</h1>
+        <h1>{pageCounter} {pages.length}</h1>
 
         <audio ref={this.voRef} preload="true">
           <source src={pages[pageCounter]["vo"]}/>
         </audio>
 
-        {pageCounter <= 12
-          ? <Start pageUp={this.pageUp} vo={pages[pageCounter+1]["vo"]} img={pages[pageCounter]["img"]} text={pages[pageCounter]["text"]} />
+        {pageCounter <= pages.length-1
+          ? <Start pageUp={this.pageUp} vo={pages[pageCounter]["vo"]} img={pages[pageCounter]["img"]} text={pages[pageCounter]["text"]} />
           : <p>DONE</p>
         }
         
