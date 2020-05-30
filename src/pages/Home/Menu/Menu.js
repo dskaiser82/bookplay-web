@@ -6,10 +6,11 @@ import './Menu.scss'
 function Start(props) {
 	return (
 		<div className="start">
-			<img className="page" src={props.img} />
+			<h1>Im a meny</h1>
+			{/* <img className="page" src={props.img} />
 			<div className="text-box">
 				<p className="text">{props.text}</p>
-			</div>
+			</div> */}
 		</div>
 	)
 }

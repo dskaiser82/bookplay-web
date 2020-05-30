@@ -1,6 +1,7 @@
 import React from 'react';
 import './Home.scss'
 import Start from "./Start/Start.js"
+import Menu from "./Menu/Menu.js"
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { faArrowLeft} from '@fortawesome/free-solid-svg-icons';
 // import { faArrowRight} from '@fortawesome/free-solid-svg-icons';
@@ -120,7 +121,9 @@ class Home extends React.Component{
     this.setState({pageCounter:this.state.pageCounter+1})
     
     this.playPageTurn()
+
     this.playAudio()
+  
   }
 
   render(){
@@ -131,12 +134,12 @@ class Home extends React.Component{
         <h1>{pageCounter} {pages.length}</h1>
 
         <audio ref={this.voRef} preload="true">
-          <source src={pages[pageCounter]["vo"]}/>
+          <source src={ pageCounter <= pages.length-1 ? pages[pageCounter]["vo"] : ""}/>
         </audio>
 
         {pageCounter <= pages.length-1
-          ? <Start pageUp={this.pageUp} vo={pages[pageCounter]["vo"]} img={pages[pageCounter]["img"]} text={pages[pageCounter]["text"]} />
-          : <p>DONE</p>
+          ? <Start pageUp={this.pageUp} img={pages[pageCounter]["img"]} text={pages[pageCounter]["text"]} />
+          : <Menu/>
         }
         
       </div>
