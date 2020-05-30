@@ -15,6 +15,14 @@ class Home extends React.Component{
     this.pageUp = this.pageUp.bind(this)
   
     this.state = {
+      menu: {
+        titles: false,
+        options: {
+          on: false,
+          music: true,
+          vo: true
+        }
+      },
       pageCounter: 0,
       pages : [
         {
@@ -133,7 +141,7 @@ class Home extends React.Component{
 
         {pageCounter <= 12
           ? <Start pageUp={this.pageUp} vo={pages[pageCounter+1]["vo"]} img={pages[pageCounter]["img"]} text={pages[pageCounter]["text"]} />
-          :  <Start pageUp={this.pageUp}  img={pages[pageCounter]["img"]}/>
+          : <p>DONE</p>
         }
         
       </div>
