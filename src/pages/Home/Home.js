@@ -17,12 +17,17 @@ class Home extends React.Component{
   
     this.state = {
       menu: {
-        titles: false,
+        menu: "end-titles", //end-titles or start-options
         options: {
           on: false,
           music: true,
           vo: true
-        }
+        },
+        img:{
+          cover: "/wolf/img/menu/cover.png",
+          titles: "/wolf/img/menu/titles.png",
+          credits: titles: "/wolf/img/menu/credits.png"
+        },
       },
       pageCounter: 0,
       pages : [
