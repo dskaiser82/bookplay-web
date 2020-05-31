@@ -26,7 +26,7 @@ class Home extends React.Component{
         img:{
           cover: "/wolf/img/menu/cover.png",
           titles: "/wolf/img/menu/titles.png",
-          credits: titles: "/wolf/img/menu/credits.png"
+          credits: "/wolf/img/menu/credits.png"
         },
       },
       pageCounter: 0,
@@ -143,7 +143,7 @@ class Home extends React.Component{
         </audio>
 
         {pageCounter <= pages.length-1
-          ? <Start pageUp={this.pageUp} img={pages[pageCounter]["img"]} text={pages[pageCounter]["text"]} />
+          ? <Start pageUp={this.pageUp} page={pages[pageCounter]} />
           : <Menu/>
         }
         
