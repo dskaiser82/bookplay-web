@@ -136,8 +136,7 @@ class Home extends React.Component{
     let pageCounter = this.state.pageCounter
     return(
       <div className="home">  
-        <h1>{pageCounter} {pages.length}</h1>
-
+       
         <audio ref={this.voRef} preload="true">
           <source src={ pageCounter <= pages.length-1 ? pages[pageCounter]["vo"] : ""}/>
         </audio>

@@ -6,7 +6,7 @@ import './Menu.scss'
 function Start(props) {
 	return (
 		<div className="start">
-			<h1>Im a meny</h1>
+			<h1>Placeholder for end card</h1>
 			{/* <img className="page" src={props.img} />
 			<div className="text-box">
 				<p className="text">{props.text}</p>
