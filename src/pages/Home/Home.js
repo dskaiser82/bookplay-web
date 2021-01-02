@@ -49,7 +49,7 @@ class Home extends React.Component{
         {
           img: "/wolf/img/pages/p4.png" ,
           vo:  "/wolf/music/vo/wolf_vo_4.mp3",
-          text: 'As Spirit Wolf awoke, she did not see her Mother above.  She looked, but could not see her Mother Moon. "My Mother has left me", said Spirit Wolf.'
+          text: 'As Spirit Wolf awoke, she did not see her Mother above.  She looked, but could not find her Mother Moon. "My Mother has left me", said Spirit Wolf.'
         },
         {
           img: "/wolf/img/pages/p5.png" ,
