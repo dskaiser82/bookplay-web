@@ -7,6 +7,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, './public'),
     filename: 'bundle.js',
+    publicPath: '/',
   },
   module: {
     rules: [
@@ -17,18 +18,18 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        use: ["style-loader", "css-loader", "sass-loader"]
+        use: ['style-loader', 'css-loader', 'sass-loader'],
       },
     ],
   },
   resolve: {
     extensions: ['*', '.js', '.jsx'],
   },
-  
+
   plugins: [new webpack.HotModuleReplacementPlugin()],
   devServer: {
     contentBase: path.resolve(__dirname, './public'),
     hot: true,
-    port: 3000
+    port: 3000,
   },
 };
