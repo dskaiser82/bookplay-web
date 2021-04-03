@@ -4,7 +4,7 @@ import './styles.scss';
 
 const textBox = ({ children }) => {
   return (
-    <div className="wolf-box">
+    <div className="wolf_box.png">
       <img src="/wolf/img/wolf_box.png" />
       {children}
     </div>

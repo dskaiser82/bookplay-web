@@ -2,7 +2,13 @@
   position: relative;
   width: 100%;
   bottom: 37px;
-  img {
+  background-image: url('./wolf/img/wolf_box.png')
+    // background-color: #cccccc; /* Used if the image is unavailable */
+    // height: 500px; /* You must set a specified height */
+    // background-position: center; /* Center the image */
+    // background-repeat: no-repeat; /* Do not repeat the image */
+    // background-size: cover; /* Resize the background image to cover the entire container */
+    img {
     width: 97%;
     position: absolute;
     bottom: 16px;
