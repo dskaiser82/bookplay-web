@@ -1,0 +1,18 @@
+.App{
+ 
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+img.wolf-bg{
+  position: absolute;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  filter: blur(90%);
+  overflow: hidden;
+}
