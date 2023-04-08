@@ -1,7 +1,12 @@
 import React from 'react';
 import './Page.scss';
 
-export default function Page(props) {
+type PageProps = {
+  page: { img: string; text: string };
+  pageUp: () => void;
+};
+
+export default function Page(props: PageProps) {
   return (
     <div className="start">
       <img
