@@ -1,12 +1,7 @@
 import React from 'react';
 import './Home.scss';
-import Start from './Start/Start';
-import Menu from './Menu/Menu';
+import Page from './Start/Page';
 import { pages } from './pages';
-
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { faArrowLeft} from '@fortawesome/free-solid-svg-icons';
-// import { faArrowRight} from '@fortawesome/free-solid-svg-icons';
 
 class Home extends React.Component {
   constructor(props) {
@@ -78,11 +73,7 @@ class Home extends React.Component {
           />
         </audio>
 
-        {pageCounter <= pages.length - 1 ? (
-          <Start pageUp={this.pageUp} page={pages[pageCounter]} />
-        ) : (
-          <Menu />
-        )}
+        <Page pageUp={this.pageUp} page={pages[pageCounter]} />
       </div>
     );
   }
