@@ -29,9 +29,7 @@ export default function Home() {
     }
 
     setPageCounter(pageCounter + 1);
-
     playPageTurn();
-
     playAudio();
   };
 

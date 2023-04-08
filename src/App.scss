@@ -1,5 +1,5 @@
-.App{
- 
+body {
+  margin: 0;
 }
 header {
   display: flex;
@@ -8,7 +8,7 @@ header {
   color: white;
 }
 
-img.wolf-bg{
+img.wolf-bg {
   position: absolute;
   z-index: -1;
   width: 100vw;
