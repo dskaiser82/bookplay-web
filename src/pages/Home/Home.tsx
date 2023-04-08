@@ -5,9 +5,9 @@ import { pages } from './pages';
 
 export default function Home() {
   const [pageCounter, setPageCounter] = useState(0);
-  const voRef = React.createRef();
+  const voRef: any = React.createRef();
 
-  const playAudio = (file: any) => {
+  const playAudio = () => {
     voRef.current.pause();
     voRef.current.load();
     voRef.current.play();
