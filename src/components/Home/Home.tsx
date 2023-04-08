@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Home.scss';
-import Page from './Start/Page';
+import Page from '../Page/Page';
 import { pages } from './pages';
 
 export default function Home() {
