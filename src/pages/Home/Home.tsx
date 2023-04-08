@@ -35,10 +35,6 @@ export default function Home() {
     playAudio();
   };
 
-  console.log('pageCounter', pageCounter);
-
-  console.log();
-
   return (
     <div className="home">
       <audio ref={voRef} preload="true">
