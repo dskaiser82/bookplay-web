@@ -1,18 +1,13 @@
-import React from "react";
-import "./App.scss";
-import Home from "./pages/Home/Home.js";
-import TestMe from "./test";
+import Home from './pages/Home/Home';
+import './App.scss';
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <TestMe />
+    <div>
       <img className="wolf-bg" src="/wolf/img/art.png" />
-      <header className="App-header">
+      <header className="app-header">
         <Home />
       </header>
     </div>
   );
 }
-
-export default App;
