@@ -1,37 +1,24 @@
 {
-  "name": "minimal-react-webpack-babel-setup",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "vite-bookplay",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "start": "webpack serve --config ./webpack.config.js --mode development",
-    "build": "webpack serve --config ./webpack.config.js --mode production",
-    "test": "echo \"No test specified\" && exit 0"
-  },
-  "keywords": [],
-  "author": "Dan Kaiser",
-  "license": "ISC",
-  "devDependencies": {
-    "@babel/core": "^7.12.3",
-    "@babel/preset-env": "^7.12.1",
-    "@babel/preset-react": "^7.12.1",
-    "@types/react": "^18.0.26",
-    "babel-loader": "^8.1.0",
-    "react-hot-loader": "^4.13.0",
-    "webpack": "^5.3.2",
-    "webpack-cli": "^4.1.0",
-    "webpack-dev-server": "^3.11.1"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
-    "css-loader": "^5.0.1",
-    "node-sass": "^5.0.0",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-router": "^5.2.0",
-    "react-router-dom": "^5.2.0",
-    "sass-loader": "^10.1.0",
-    "style-loader": "^2.0.0",
-    "ts-loader": "^9.4.2",
-    "typescript": "^4.9.4"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.10.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.33",
+    "@types/react-dom": "^18.0.11",
+    "@vitejs/plugin-react": "^3.1.0",
+    "sass": "^1.61.0",
+    "typescript": "^5.0.4",
+    "vite": "^4.2.0"
   }
 }
