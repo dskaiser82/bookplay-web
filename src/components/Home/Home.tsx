@@ -6,7 +6,7 @@ import { debounce } from '../../helpers';
 
 export default function Home() {
   const [pageCounter, setPageCounter] = useState(0);
-  const voRef: any = React.createRef();
+  const voRef = useRef();
 
   const playAudio = () => {
     voRef.current.pause();
@@ -47,12 +47,15 @@ export default function Home() {
 
   useEffect(() => {
     playAudio();
+    if (pageCounter > 13) {
+      setPageCounter(0);
+    }
   }, [pageCounter]);
 
   return (
     <div className="home">
       <audio ref={voRef} preload="true">
-        <source src={pages[pageCounter]['vo']} />
+        <source src={pages[pageCounter]?.vo || ''} />
       </audio>
 
       <Page page={pages[pageCounter]} />
