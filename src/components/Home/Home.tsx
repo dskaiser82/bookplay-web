@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './Home.scss';
 import Page from '../Page/Page';
 import { pages } from './pages';
@@ -16,6 +16,7 @@ export default function Home() {
 
   const playMusic = () => {
     let music = new Audio('/wolf/music/wolf_flute_final.mp3');
+    music.volume = 0.3;
     music.play();
   };
 
@@ -24,29 +25,36 @@ export default function Home() {
     audio.play();
   };
 
-  if (pageCounter === 0) {
-    playMusic();
-  }
-
   const pageUp = () => {
-    setPageCounter(pageCounter + 1);
-    playPageTurn();
-    playAudio();
+    setPageCounter((prevState) => prevState + 1);
   };
+
+  const debouncedPageUp = debounce(function () {
+    pageUp();
+  }, 500);
+
+  useEffect(() => {
+    if (pageCounter === 0) {
+      playMusic();
+      document.addEventListener('keydown', debouncedPageUp);
+    }
+
+    return () => {
+      document.removeEventListener('keydown', debouncedPageUp);
+    };
+  }, []);
+
+  useEffect(() => {
+    playAudio();
+  }, [pageCounter]);
 
   return (
     <div className="home">
       <audio ref={voRef} preload="true">
-        <source
-          src={
-            pageCounter <= pages.length - 1
-              ? pages[pageCounter]['vo']
-              : ''
-          }
-        />
+        <source src={pages[pageCounter]['vo']} />
       </audio>
 
-      <Page pageUp={pageUp} page={pages[pageCounter]} />
+      <Page page={pages[pageCounter]} />
     </div>
   );
 }
