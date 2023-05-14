@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './Home.scss';
 import Page from '../Page/Page';
 import { pages } from './pages';
+import { debounce } from '../../helpers';
 
 export default function Home() {
   const [pageCounter, setPageCounter] = useState(0);
@@ -23,11 +24,11 @@ export default function Home() {
     audio.play();
   };
 
-  const pageUp = () => {
-    if (pageCounter === 0) {
-      playMusic();
-    }
+  if (pageCounter === 0) {
+    playMusic();
+  }
 
+  const pageUp = () => {
     setPageCounter(pageCounter + 1);
     playPageTurn();
     playAudio();
