@@ -27,6 +27,7 @@ export default function Home() {
 
   const pageUp = () => {
     setPageCounter((prevState) => prevState + 1);
+    playPageTurn();
   };
 
   const debouncedPageUp = debounce(function () {
