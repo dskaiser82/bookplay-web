@@ -36,7 +36,6 @@ export default function Home() {
 
   useEffect(() => {
     if (pageCounter === 0) {
-      playMusic();
       document.addEventListener('keydown', debouncedPageUp);
     }
 
@@ -50,6 +49,11 @@ export default function Home() {
     if (pageCounter > 13) {
       setPageCounter(0);
     }
+
+    if(pageCounter === 1) {
+      playMusic();
+    }
+
   }, [pageCounter]);
 
   return (
