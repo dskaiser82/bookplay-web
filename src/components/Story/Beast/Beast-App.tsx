@@ -1,5 +1,5 @@
 import Home from '../../Home/Home';
-import './App.scss';
+import './Beast-App.scss';
 
 export default function BeastApp() {
   return (
