@@ -6,9 +6,7 @@ import { debounce } from '../../helpers';
 export default function Home({ pages }) {
   const [pageCounter, setPageCounter] = useState(0);
   const voRef = useRef<HTMLAudioElement>(null);
-  const musicRef = useRef(
-    new Audio('/wolf/music/wolf_flute_final.mp3')
-  ); // Create the Audio object here
+  const musicRef = useRef(new Audio(pages[0].music)); // Create the Audio object here
   const [isMusicPlaying, setIsMusicPlaying] = useState(false);
 
   const playAudio = () => {
@@ -62,7 +60,7 @@ export default function Home({ pages }) {
 
   useEffect(() => {
     // Set the volume and other properties of the music here
-    musicRef.current.volume = 0.3;
+    musicRef.current.volume = 0.5;
 
     // Cleanup function to pause and reset the music when the component unmounts
     return () => {

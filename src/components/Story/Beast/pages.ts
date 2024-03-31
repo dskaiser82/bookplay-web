@@ -1,6 +1,7 @@
 export const pages = [
   {
     img: '/public/beast/img/pages/0.png',
+    music: '/beast/music/beast-intro.m4a',
   },
   {
     img: '/public/beast/img/pages/1.png',

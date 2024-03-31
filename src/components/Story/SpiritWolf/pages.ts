@@ -2,6 +2,7 @@ export const pages = [
   {
     img: '/wolf/img/pages/p0.jpg',
     vo: '',
+    music: '/wolf/music/wolf_flute_final.mp3',
     text: '',
   },
   {
