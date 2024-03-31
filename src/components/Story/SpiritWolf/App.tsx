@@ -1,4 +1,6 @@
+import React from 'react';
 import Home from '../../Home/Home';
+import { pages } from './pages';
 import './App.scss';
 
 export default function App() {
@@ -6,7 +8,7 @@ export default function App() {
     <div>
       <img className="wolf-bg" src="/wolf/img/art.png" />
       <header className="app-header">
-        <Home />
+        <Home pages={pages} />
       </header>
     </div>
   );

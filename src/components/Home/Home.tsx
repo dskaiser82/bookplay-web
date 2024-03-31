@@ -1,10 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Home.scss';
 import Page from '../Page/Page';
-import { pages } from '../Story/SpiritWolf/pages';
 import { debounce } from '../../helpers';
 
-export default function Home() {
+export default function Home({ pages }) {
   const [pageCounter, setPageCounter] = useState(0);
   const voRef = useRef<HTMLAudioElement>(null);
   const musicRef = useRef(

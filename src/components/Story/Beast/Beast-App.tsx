@@ -1,4 +1,6 @@
+import React from 'react';
 import Home from '../../Home/Home';
+import { pages } from './pages';
 import './Beast-App.scss';
 
 export default function BeastApp() {
@@ -6,8 +8,7 @@ export default function BeastApp() {
     <div>
       <img className="wolf-bg" src="/beast/img/disney-castle.jpeg" />
       <header className="app-header">
-        {/* <Home /> */}
-        Hell
+        <Home pages={pages} />
       </header>
     </div>
   );
