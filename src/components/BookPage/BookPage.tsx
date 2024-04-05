@@ -1,11 +1,12 @@
 import React from 'react';
-import './Page.scss';
+import { PageType } from '../Story/types';
+import './BookPage.scss';
 
-type PageProps = {
-  page: { img: string; text: string };
+type BookPageProps = {
+  page: PageType;
 };
 
-export default function Page(props: PageProps) {
+export default function BookPage(props: BookPageProps) {
   return (
     <div className="start">
       <img className="page" src={props?.page?.img} />

@@ -1,9 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Home.scss';
-import Page from '../Page/Page';
+import BookPage from '../BookPage/BookPage';
+import { PageType } from '../Story/types';
 import { debounce } from '../../helpers';
 
-export default function Home({ pages }) {
+type HomeProps = {
+  pages: PageType[];
+};
+
+export default function Home({ pages }: HomeProps) {
   const [pageCounter, setPageCounter] = useState(0);
   const voRef = useRef<HTMLAudioElement>(null);
   const musicRef = useRef(new Audio(pages[0].music)); // Create the Audio object here
@@ -78,7 +83,7 @@ export default function Home({ pages }) {
         />
       </audio>
 
-      <Page page={pages[pageCounter]} />
+      <BookPage page={pages[pageCounter]} />
       {pageCounter === 0 && (
         <div className="button-play" onClick={toggleMusicPlayback}>
           {isMusicPlaying ? 'Pause Music' : 'Play Music'}
