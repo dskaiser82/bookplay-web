@@ -80,9 +80,9 @@ export default function Home({ pages }) {
 
       <Page page={pages[pageCounter]} />
       {pageCounter === 0 && (
-        <button className="button-play" onClick={toggleMusicPlayback}>
+        <div className="button-play" onClick={toggleMusicPlayback}>
           {isMusicPlaying ? 'Pause Music' : 'Play Music'}
-        </button>
+        </div>
       )}
     </div>
   );
